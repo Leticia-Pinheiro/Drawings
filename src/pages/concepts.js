@@ -6,6 +6,8 @@ export default function Concepts(){
     function DrawRectangle(color, x1, y1, x2, y2){
         brush.fillStyle = color;
         brush.fillRect(x1, y1, x2, y2);
+        brush.strokeStyle = 'black';
+        brush.strokeRect(x1, y1, x2, y2)
     }
 
     function DrawTriangle(color, x1, y1, x2, y2, x3, y3){
@@ -24,6 +26,12 @@ export default function Concepts(){
         brush.fill();
     }
 
+    function DrawText(color, text, x, y){
+        brush.font = '20px Georgia';
+        brush.fillStyle = color;
+        brush.fillText(text, x, y);
+    }
+
     function DrawScreen(){        
         DrawRectangle('lightgrey', 0, 0, 600, 400);
         DrawRectangle('green', 0, 0, 200, 400);
@@ -31,7 +39,9 @@ export default function Concepts(){
         
         DrawTriangle('blue', 300, 200, 200, 400, 400, 400);    
         
-        DrawCircles('yellow', 300, 200, 50, 0, 2*3.14)        
+        DrawCircles('yellow', 300, 200, 50, 0, 2*3.14) 
+        
+        DrawText('black', 'Treino', 50, 30)
     }
 
     return( 
